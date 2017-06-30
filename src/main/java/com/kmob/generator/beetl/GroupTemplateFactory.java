@@ -76,6 +76,8 @@ public class GroupTemplateFactory {
         GroupTemplate stringTemplate = getString();
         Template t = stringTemplate.getTemplate(name);
         t.binding("crud", crud);
+        t.binding("tableUpper",StrUtils.toUpperCaseFirst(crud.getTable().getClassName()));
+        t.binding("tableLower",StrUtils.toLowerCaseFirst(crud.getTable().getClassName()));
         t.binding("key", crud.getUrlKey());
         t.binding("keyUpper", crud.getUrlKey().toUpperCase());
         t.binding("keyLower", crud.getUrlKey().toLowerCase());

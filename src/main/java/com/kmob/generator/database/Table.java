@@ -27,6 +27,7 @@ public class Table implements Serializable, Cloneable {
 	 * 主键
 	 */
 	private List<String> primaryKeyList = new ArrayList<String>();
+	
 
 	public Table() {
 	}
@@ -110,7 +111,34 @@ public class Table implements Serializable, Cloneable {
 		}
 	}
 
-	public String toString() {
+	/**
+	 * 获取多少列
+	 * 
+	 * 
+	 * @return
+	 */
+	public int getColumnCount() {
+        return columns.size();
+    }
+	
+	
+	/**
+	 * 获取多少列
+	 * 
+	 * 
+	 * @return
+	 */
+	public int getHalfColumnCount() {
+	    if(columns.size() % 2 == 0){
+	        return columns.size()/2;
+	    }else{
+	        return columns.size()/2 + 1;
+	    }
+	}
+	
+	
+
+    public String toString() {
 		return "[" + getRemarks() + ":" + getTableName() + " ]";
 	}
 }

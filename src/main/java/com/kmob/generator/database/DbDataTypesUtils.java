@@ -96,7 +96,7 @@ public class DbDataTypesUtils {
 				return "Short";
 			} else if (size < 10) {
 				return "Integer";
-			} else if (size < 19) {
+			} else if (size <= 20) {
 				return "Long";
 			} else {
 				return "BigDecimal";

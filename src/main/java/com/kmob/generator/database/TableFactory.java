@@ -111,10 +111,10 @@ public class TableFactory {
 		try {
 			realTableName = rs.getString("TABLE_NAME");
 			String remarks = rs.getString("REMARKS");
-			// if(remarks == null && DbKit.getDialect().isOracle()) {
-			// remarks = getOracleTableComments(realTableName);
-			// }
-			//
+            if (remarks == null) {
+                remarks = getOracleTableComments(realTableName);
+            }
+
 			Table table = new Table();
 			table.setTableName(realTableName);
 			table.setRemarks(remarks);
@@ -190,10 +190,9 @@ public class TableFactory {
 			String columnDefaultValue = columnRs.getString("COLUMN_DEF");
 			String remarks = columnRs.getString("REMARKS");
 
-			// if(remarks == null && DbKit.getDialect().isOracle()) {
-			// remarks = getOracleColumnComments(table.getSqlName(),
-			// columnName);
-			// }
+            if (remarks == null ) {
+                remarks = getOracleColumnComments(table.getTableName(), columnName);
+            }
 
 			// if columnNoNulls or columnNullableUnknown assume "not nullable"
 			int size = columnRs.getInt("COLUMN_SIZE");
