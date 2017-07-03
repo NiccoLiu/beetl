@@ -10,7 +10,13 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-3">
-                                <#NameCon id="condition" name="名称" />
+                            	# for(column in crud.table.searchColumns){ #
+                            		# if(strutils.equals('date',strutils.toLowerCase(column.sqlTypeName)) || strutils.equals('datetime',strutils.toLowerCase(column.sqlTypeName)) || strutils.equals('timestamp',strutils.toLowerCase(column.sqlTypeName)) ) { #
+                                <\#TimeCon id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" name="@{column.remarks}" />
+                            		# } else { #
+                                <\#NameCon id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" name="@{column.remarks}" />
+                            		# } #
+    							# } #
                             </div>
                             <div class="col-sm-3">
                                 <\#button name="搜索" icon="fa-search" clickFun="@{crud.table.className}.search()"/>

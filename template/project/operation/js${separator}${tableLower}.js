@@ -80,7 +80,9 @@ var @{crud.table.className} = {
 
 @{crud.table.className}.search = function () {
     var queryData = {};
-    queryData['condition'] = $("\#condition").val();
+    # for(column in crud.table.searchColumns){ #
+    queryData['@{strutils.toLowerCaseFirst(column.columnJavaName)}'] = $("\#@{strutils.toLowerCaseFirst(column.columnJavaName)}").val();
+    # } #
     @{crud.table.className}.table.refresh({query: queryData});
 };
 

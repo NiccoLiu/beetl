@@ -24,7 +24,16 @@ public class Table implements Serializable, Cloneable {
 	 */
 	private LinkedHashSet<Column> columns = new LinkedHashSet<Column>();
 	
+	/**
+	 * 非空列
+	 */
 	private LinkedHashSet<Column> noNullcolumns = new LinkedHashSet<Column>();
+	
+	/**
+	 * 搜索列
+	 */
+	private LinkedHashSet<Column> searchcolumns = new LinkedHashSet<Column>();
+	
 	
 	
 	/**
@@ -41,6 +50,7 @@ public class Table implements Serializable, Cloneable {
 		this.remarks = t.getRemarks();
 		this.columns = t.getColumns();
 		this.noNullcolumns = t.getNotNullColumns();
+		this.searchcolumns = t.getSearchColumns();
 		this.primaryKeyList = t.getPkList();
 	}
 
@@ -94,6 +104,10 @@ public class Table implements Serializable, Cloneable {
 	public void addNotNullColumn(Column column){
 	    noNullcolumns.add(column);
 	}
+	
+	public void addSearchColumn(Column column){
+	    searchcolumns.add(column);
+	}
 
 	public LinkedHashSet<Column> getColumns() {
 		return columns;
@@ -102,8 +116,13 @@ public class Table implements Serializable, Cloneable {
 	public LinkedHashSet<Column> getNotNullColumns() {
 	    return noNullcolumns;
 	}
+	
 
-	/**
+	public LinkedHashSet<Column> getSearchColumns() {
+        return searchcolumns;
+    }
+
+    /**
 	 * 得到是主键的全部column
 	 * 
 	 * @return
