@@ -1,21 +1,21 @@
 @layout("/common/_container.html"){
 <div class="ibox float-e-margins">
     <div class="ibox-content">
-        <div class="form-horizontal" id="@{crud.table.className}InfoForm">
+        <div class="form-horizontal" id="InfoForm">
 
-            <input type="hidden" id="id" value="${@{strutils.toLowerCaseFirst(crud.table.className)}.id\}">
+            <input type="hidden" id="id" value="${@{strutils.toLowerCaseFirst(crud.table.className)}.id}">
 
             <div class="row">
                 <div class="col-sm-6 b-r">
                 	# for(column in crud.table.columns){ #
-			        	# if( columnLP.index <= crud.table.halfColumnCount ) { #
+			        	# if( columnLP.index <= crud.table.halfColumnCount && !column.pk ) { #
 			        <\#input id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" value="${@{strutils.toLowerCaseFirst(crud.table.className)}.@{strutils.toLowerCaseFirst(column.columnJavaName)}}" name="@{column.remarks}" underline="true" />
 			        	# } #
 			        # } #
                 </div>
                 <div class="col-sm-6">
                 	# for(column in crud.table.columns){ #
-			        	# if( columnLP.index > crud.table.halfColumnCount ) { #
+			        	# if( columnLP.index > crud.table.halfColumnCount && !column.pk ) { #
 			        <\#input id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" value="${@{strutils.toLowerCaseFirst(crud.table.className)}.@{strutils.toLowerCaseFirst(column.columnJavaName)}}" name="@{column.remarks}" underline="true" />
 			        	# } #
 			        # } #

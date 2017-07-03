@@ -23,6 +23,10 @@ public class Table implements Serializable, Cloneable {
 	 * 列表
 	 */
 	private LinkedHashSet<Column> columns = new LinkedHashSet<Column>();
+	
+	private LinkedHashSet<Column> noNullcolumns = new LinkedHashSet<Column>();
+	
+	
 	/**
 	 * 主键
 	 */
@@ -36,6 +40,7 @@ public class Table implements Serializable, Cloneable {
 		setTableName(t.getTableName());
 		this.remarks = t.getRemarks();
 		this.columns = t.getColumns();
+		this.noNullcolumns = t.getNotNullColumns();
 		this.primaryKeyList = t.getPkList();
 	}
 
@@ -85,9 +90,17 @@ public class Table implements Serializable, Cloneable {
 	public void addColumn(Column column) {
 		columns.add(column);
 	}
+	
+	public void addNotNullColumn(Column column){
+	    noNullcolumns.add(column);
+	}
 
 	public LinkedHashSet<Column> getColumns() {
 		return columns;
+	}
+	
+	public LinkedHashSet<Column> getNotNullColumns() {
+	    return noNullcolumns;
 	}
 
 	/**
@@ -130,9 +143,9 @@ public class Table implements Serializable, Cloneable {
 	 */
 	public int getHalfColumnCount() {
 	    if(columns.size() % 2 == 0){
-	        return columns.size()/2;
+	        return ( columns.size() - 1 )/2;
 	    }else{
-	        return columns.size()/2 + 1;
+	        return( columns.size() -1 )/2 + 1;
 	    }
 	}
 	

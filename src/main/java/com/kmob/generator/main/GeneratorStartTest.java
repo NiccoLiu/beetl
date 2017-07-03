@@ -10,7 +10,7 @@ import com.kmob.generator.util.AutoCreate;
 import com.kmob.generator.util.DbUtils;
 import com.kmob.generator.util.StrUtils;
 
-public class AutoCreateClientDemo {
+public class GeneratorStartTest {
 
 	public static void main(String[] args) throws Exception {
 		run();

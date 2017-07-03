@@ -167,6 +167,9 @@ public class TableFactory {
 
 			for (Column column : columns) {
 				table.addColumn(column);
+				if(!column.isNullable() && !column.isPk()){
+				    table.addNotNullColumn(column);
+				}
 			}
 
 			return new Table(table);

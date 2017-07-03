@@ -17,7 +17,7 @@ import com.kmob.generator.util.StrUtils;
  * @date 2017年6月26日
  * @since 1.0
  */
-public class AutoCreateClient {
+public class GeneratorStart {
 
 	public static void main(String[] args) throws Exception {
 		run();

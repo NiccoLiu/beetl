@@ -8,14 +8,14 @@
 			<div class="row">
 				<div class="col-sm-6 b-r">
 					# for(column in crud.table.columns){ #
-			        	# if( columnLP.index <= crud.table.halfColumnCount ) { #
+			        	# if( columnLP.index <= crud.table.halfColumnCount && ! column.pk) { #
 			        <\#input id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" name="@{column.remarks}" underline="true" />
 			        	# } #
 			        # } #
 				</div>
 				<div class="col-sm-6">
 					# for(column in crud.table.columns){ #
-			        	# if( columnLP.index > crud.table.halfColumnCount ) { #
+			        	# if( columnLP.index > crud.table.halfColumnCount && ! column.pk ) { #
 			        <\#input id="@{strutils.toLowerCaseFirst(column.columnJavaName)}" name="@{column.remarks}" underline="true" />
 			        	# } #
 			        # } #

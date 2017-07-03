@@ -54,7 +54,7 @@ var @{crud.table.className} = {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/@{module}/@{strutils.toLowerCaseFirst(crud.table.className)}/@{strutils.toLowerCaseFirst(crud.table.className)}_update/' + Notice.seItem.id
+            content: Feng.ctxPath + '/@{module}/@{strutils.toLowerCaseFirst(crud.table.className)}/@{strutils.toLowerCaseFirst(crud.table.className)}_edit/' + @{crud.table.className}.seItem.id
         });
         this.layerIndex = index;
     }
@@ -70,7 +70,7 @@ var @{crud.table.className} = {
             }, function (data) {
                 Feng.error("删除失败!" + data.responseJSON.message + "!");
             });
-            ajax.set("noticeId", @{crud.table.className}.seItem.id);
+            ajax.set("id", @{crud.table.className}.seItem.id);
             ajax.start();
         };
 
