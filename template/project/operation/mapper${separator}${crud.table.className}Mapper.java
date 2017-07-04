@@ -16,5 +16,9 @@ import @{packagePath}.model.@{crud.table.className};
  */
 public interface @{crud.table.className}Mapper extends BaseMapper<@{crud.table.className}> {
     
-    List<@{crud.table.className}> get@{crud.table.className}Page(@Param("page") Page<@{crud.table.className}> page,  @Param("orderByField") String orderByField, @Param("isAsc") boolean isAsc);
+    List<@{crud.table.className}> get@{crud.table.className}Page(@Param("page") Page<@{crud.table.className}> page,
+        # for(column in crud.table.searchColumns){ #
+        @Param("@{strutils.toLowerCaseFirst(column.columnJavaName)}") @{column.javaTypeObject} @{strutils.toLowerCaseFirst(column.columnJavaName)},
+        # } #
+        @Param("orderByField") String orderByField, @Param("isAsc") boolean isAsc);
 }
