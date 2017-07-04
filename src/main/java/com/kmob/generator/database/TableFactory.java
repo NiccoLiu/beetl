@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.jfinal.plugin.activerecord.Config;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.DbKit;
@@ -168,11 +170,14 @@ public class TableFactory {
 			for (Column column : columns) {
 				table.addColumn(column);
 				String searchColumn = com.kmob.generator.util.Config.getStr("template.table."+table.getTableName()+".searchColumn");
-				String[] searchColumns = searchColumn.split(",");
 				
-				for(String c:searchColumns){
-				    if(column.getColumnName().toLowerCase().equals(c.toLowerCase())){
-				        table.addSearchColumn(column);
+				if(StringUtils.isNoneBlank(searchColumn)){
+				    String[] searchColumns = searchColumn.split(",");
+				    
+				    for(String c:searchColumns){
+				        if(column.getColumnName().toLowerCase().equals(c.toLowerCase())){
+				            table.addSearchColumn(column);
+				        }
 				    }
 				}
 				
