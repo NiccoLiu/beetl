@@ -94,7 +94,7 @@ public class DbDataTypesUtils {
 				return "Byte";
 			} else if (size < 5) {
 				return "Short";
-			} else if (size < 10) {
+			} else if (size <= 10) {
 				return "Integer";
 			} else if (size <= 20) {
 				return "Long";
@@ -128,8 +128,8 @@ public class DbDataTypesUtils {
 		TYPE_MAP.put(Types.VARBINARY, "byte[]");
 		TYPE_MAP.put(Types.LONGVARBINARY, "byte[]");
 		TYPE_MAP.put(Types.DATE, "Date");
-		TYPE_MAP.put(Types.TIME, "Time");
-		TYPE_MAP.put(Types.TIMESTAMP, "Timestamp");
+		TYPE_MAP.put(Types.TIME, "Date");
+		TYPE_MAP.put(Types.TIMESTAMP, "Date");
 		TYPE_MAP.put(Types.CLOB, "Clob");
 		TYPE_MAP.put(Types.BLOB, "Blob");
 		TYPE_MAP.put(Types.ARRAY, "Array");
@@ -156,8 +156,8 @@ public class DbDataTypesUtils {
 		TYPE_MAP_OBJECT.put(Types.VARBINARY, "byte[]");
 		TYPE_MAP_OBJECT.put(Types.LONGVARBINARY, "byte[]");
 		TYPE_MAP_OBJECT.put(Types.DATE, "java.util.Date");
-		TYPE_MAP_OBJECT.put(Types.TIME, "java.util.Time");
-		TYPE_MAP_OBJECT.put(Types.TIMESTAMP, "java.util.Timestamp");
+		TYPE_MAP_OBJECT.put(Types.TIME, "java.util.Date");
+		TYPE_MAP_OBJECT.put(Types.TIMESTAMP, "java.util.Date");
 		TYPE_MAP_OBJECT.put(Types.CLOB, "java.sql.Clob");
 		TYPE_MAP_OBJECT.put(Types.BLOB, "java.sql.Blob");
 		TYPE_MAP_OBJECT.put(Types.ARRAY, "java.sql.Array");
