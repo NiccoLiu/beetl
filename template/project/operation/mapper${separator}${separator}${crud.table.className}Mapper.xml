@@ -31,6 +31,17 @@
 	
 	<select id="get@{crud.table.className}Page" resultType="@{crud.table.className}">
         select <include refid="Base_Column_List" /> from @{crud.table.tableName} where 1 = 1
+        # for(column in crud.table.searchColumns){ #
+        	# if(strutils.equals('date',strutils.toLowerCase(column.sqlTypeName)) || strutils.equals('datetime',strutils.toLowerCase(column.sqlTypeName)) || strutils.equals('timestamp',strutils.toLowerCase(column.sqlTypeName)) ) { #
+        <if test="@{strutils.toLowerCaseFirst(column.columnJavaName)} != null ">
+			and @{column.columnName} >= \#{@{strutils.toLowerCaseFirst(column.columnJavaName)}}
+		</if>
+            # } else { #
+        <if test="@{strutils.toLowerCaseFirst(column.columnJavaName)} != null and @{strutils.toLowerCaseFirst(column.columnJavaName)} != ''">
+			and @{column.columnName} like '%${@{strutils.toLowerCaseFirst(column.columnJavaName)}}%' 
+		</if>
+            # } #
+        # } #
         <choose>
             <when test="orderByField != null and orderByField !=''">
                 <choose>

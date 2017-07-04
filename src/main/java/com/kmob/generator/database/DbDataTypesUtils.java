@@ -155,9 +155,9 @@ public class DbDataTypesUtils {
 		TYPE_MAP_OBJECT.put(Types.BINARY, "byte[]");
 		TYPE_MAP_OBJECT.put(Types.VARBINARY, "byte[]");
 		TYPE_MAP_OBJECT.put(Types.LONGVARBINARY, "byte[]");
-		TYPE_MAP_OBJECT.put(Types.DATE, "java.sql.Date");
-		TYPE_MAP_OBJECT.put(Types.TIME, "java.sql.Time");
-		TYPE_MAP_OBJECT.put(Types.TIMESTAMP, "java.sql.Timestamp");
+		TYPE_MAP_OBJECT.put(Types.DATE, "java.util.Date");
+		TYPE_MAP_OBJECT.put(Types.TIME, "java.util.Time");
+		TYPE_MAP_OBJECT.put(Types.TIMESTAMP, "java.util.Timestamp");
 		TYPE_MAP_OBJECT.put(Types.CLOB, "java.sql.Clob");
 		TYPE_MAP_OBJECT.put(Types.BLOB, "java.sql.Blob");
 		TYPE_MAP_OBJECT.put(Types.ARRAY, "java.sql.Array");

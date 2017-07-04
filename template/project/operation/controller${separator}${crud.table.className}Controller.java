@@ -52,9 +52,21 @@ public class @{crud.table.className}Controller extends BaseController{
     @RequestMapping("/list")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
-    public Object list() {
+    public Object list(
+    # for(column in crud.table.searchColumns){ #
+        # if(columnLP.last ) { #
+        @RequestParam(required = false) @{column.javaTypeObject} @{strutils.toLowerCaseFirst(column.columnJavaName)}
+        # } else { #
+        @RequestParam(required = false) @{column.javaTypeObject} @{strutils.toLowerCaseFirst(column.columnJavaName)},
+        # } #
+    # } #
+    ) {
         Page<@{crud.table.className}> page = new PageFactory<@{crud.table.className}>().defaultPage();
-        List<@{crud.table.className}> result = @{strutils.toLowerCaseFirst(crud.table.className)}Mapper.get@{crud.table.className}Page(page, page.getOrderByField(), page.isAsc());
+        List<@{crud.table.className}> result = @{strutils.toLowerCaseFirst(crud.table.className)}Mapper.get@{crud.table.className}Page(page,
+        # for(column in crud.table.searchColumns){ #
+        @{strutils.toLowerCaseFirst(column.columnJavaName)},
+        # } #
+        page.getOrderByField(), page.isAsc());
         page.setRecords(result);
         return packForBT(page);
     }
