@@ -38,11 +38,7 @@
 		</if>
             # } else { #
         <if test="@{strutils.toLowerCaseFirst(column.columnJavaName)} != null and @{strutils.toLowerCaseFirst(column.columnJavaName)} != ''">
-<<<<<<< HEAD
 			and @{column.columnName} like '%${@{strutils.toLowerCaseFirst(column.columnJavaName)}}%' 
-=======
-			and @{column.columnName} like CONCAT('%',\#{@{strutils.toLowerCaseFirst(column.columnJavaName)}},'%') 
->>>>>>> branch 'master' of https://git.oschina.net/fastbuild/beetl-generator.git
 		</if>
             # } #
         # } #
