@@ -121,7 +121,7 @@ public class @{crud.table.className}Controller extends BaseController{
     /**
      * 删除 @{crud.table.remarks}
      */
-    @RequestMapping(value = "/remove")
+    @RequestMapping(value = "/delete")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public Tip remove(@RequestParam Long id) {
