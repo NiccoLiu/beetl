@@ -19,9 +19,9 @@ public class GeneratorStartTest {
 	protected static void run() throws SQLException, Exception {
 	    initOracle();
 
-		String module = "other";
+		String module = "derror";
 		String packagePath = "com.kmob.powernetwork.operation";
-		String tables = "COMUNICATION_CARD";
+		String tables = "FAULT_RESOLVE_RESULT";
 
 		Map<String, CRUD> crudMap = null;
 		if (StrUtils.isEmpty(tables) || "all".equalsIgnoreCase(tables)) {
@@ -57,7 +57,7 @@ public class GeneratorStartTest {
 	    
 	    String jdbcUrl = "jdbc:oracle:thin:@192.168.1.70:1521:orcl";
 	    String user = "kop";
-	    String password = "kop!@#";
+	    String password = "kop237";
 	    String driverClass = "oracle.jdbc.driver.OracleDriver";
 	    
 	    System.out.println("####jdbcUrlRead:" + jdbcUrl);
