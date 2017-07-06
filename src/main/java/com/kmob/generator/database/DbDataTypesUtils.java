@@ -87,14 +87,7 @@ public class DbDataTypesUtils {
 
 	public static String getPreferredJavaType(int sqlType, int size, int decimalDigits) {
 		if ((sqlType == Types.DECIMAL || sqlType == Types.NUMERIC) && decimalDigits == 0) {
-			if (size == 1) {
-				// https://sourceforge.net/tracker/?func=detail&atid=415993&aid=662953&group_id=36044
-				return "Boolean";
-			} else if (size < 3) {
-				return "Byte";
-			} else if (size < 5) {
-				return "Short";
-			} else if (size <= 10) {
+			if (size <= 10) {
 				return "Integer";
 			} else if (size <= 20) {
 				return "Long";
