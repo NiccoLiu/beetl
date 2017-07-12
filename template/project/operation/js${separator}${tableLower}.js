@@ -60,7 +60,7 @@ var @{crud.table.className} = {
     }
 };
 
-@{crud.table.className}.delete = function () {
+@{crud.table.className}.del = function () {
     if (this.check()) {
 
         var operation = function(){
