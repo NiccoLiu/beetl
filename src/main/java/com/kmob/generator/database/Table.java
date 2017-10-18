@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+
+import com.kmob.generator.util.Config;
 import com.kmob.generator.util.StrKit;
 
 
@@ -60,7 +62,7 @@ public class Table implements Serializable, Cloneable {
 	 * @return
 	 */
 	public String getClassName() {
-		return StrKit.makeAllWordFirstLetterUpperCase(StrKit.toUnderscoreName(tableName));
+		return StrKit.makeAllWordFirstLetterUpperCase(StrKit.toUnderscoreName(tableName.replace(Config.getStr("template.table.remove.prefixes"), "")));
 	}
 
 	public Column getColumnByName(String name) {
