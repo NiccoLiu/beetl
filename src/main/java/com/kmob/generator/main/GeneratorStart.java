@@ -37,7 +37,7 @@ public class GeneratorStart {
 			crudMap = DbUtils.getCRUDMap(tableArray);
 		}
 
-		new AutoCreate().setTemplatePath(Config.getStr(selected)).setCrudMap(crudMap).create();
+		new AutoCreate().setTemplatePath(selected).setCrudMap(crudMap).create();
 	}
 
 }

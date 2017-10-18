@@ -1,8 +1,7 @@
 package @{packagePath}.model;
 
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.*;
 
 
 @TableName(value = "@{crud.table.tableName}")
@@ -12,9 +11,6 @@ public class @{crud.table.className} extends Model<@{crud.table.className}> {
 
     // columns START
 	# for(column in crud.table.columns){ #
-		# if(column.columnName=='enable'||column.columnName=='update_time'||column.columnName=='update_id'||column.columnName=='create_time'||column.columnName=='create_id'){ #
-		# 	continue; #
-		# } #
 
 		# if(column.pk) { #
 	@TableId(value = "@{strutils.toLowerCase(column.columnName)}",type=IdType.AUTO)
@@ -36,10 +32,6 @@ public class @{crud.table.className} extends Model<@{crud.table.className}> {
 	# } #
 
     # for(column in crud.table.columns){ #
-		# if(column.columnName=='enable'||column.columnName=='update_time'||column.columnName=='update_id'||column.columnName=='create_time'||column.columnName=='create_id'){ #
-		# 	continue; #
-		# } #
-
 	public @{column.javaType} get@{strutils.toUpperCaseFirst(column.columnJavaName)}() {
 		return @{strutils.toLowerCaseFirst(column.columnJavaName)};
 	}
@@ -53,9 +45,6 @@ public class @{crud.table.className} extends Model<@{crud.table.className}> {
 	public String toString() {
 		String log = ""; 
 	# for(column in crud.table.columns){ #
-		# if(column.columnName=='enable'||column.columnName=='update_time'||column.columnName=='update_id'||column.columnName=='create_time'||column.columnName=='create_id'){ #
-		# 	continue; #
-		# } #
 		log += "[@{strutils.toLowerCaseFirst(column.columnJavaName)}:" + get@{strutils.toUpperCaseFirst(column.columnJavaName)}() + "]";
 	# } #
 		log += super.toString();

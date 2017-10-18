@@ -17,11 +17,12 @@ public class GeneratorStartTest {
 	}
 
 	protected static void run() throws SQLException, Exception {
-	    initOracle();
+//	    initOracle();
+	    initMysql();
 
 		String module = "derror";
-		String packagePath = "com.kmob.powernetwork.operation";
-		String tables = "FAULT_RESOLVE_RESULT";
+		String packagePath = "com.kmob.etcm.user.entity";
+		String tables = "etc_pay_account";
 
 		Map<String, CRUD> crudMap = null;
 		if (StrUtils.isEmpty(tables) || "all".equalsIgnoreCase(tables)) {
@@ -36,9 +37,9 @@ public class GeneratorStartTest {
 
 	public static void initMysql() {
 
-		String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/guns?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull";
-		String user = "root";
-		String password = "admin";
+		String jdbcUrl = "jdbc:mysql://192.168.1.70:3306/etc_user?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull";
+		String user = "kmob";
+		String password = "kmob0724(";
 		String driverClass = "com.mysql.jdbc.Driver";
 
 		System.out.println("####jdbcUrlRead:" + jdbcUrl);

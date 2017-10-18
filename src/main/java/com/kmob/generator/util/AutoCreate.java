@@ -1,13 +1,9 @@
 package com.kmob.generator.util;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.beetl.core.Configuration;
-import org.beetl.core.GroupTemplate;
 
 import com.kmob.generator.beetl.GroupTemplateFactory;
 import com.kmob.generator.beetl.TemplateUtils;
@@ -19,7 +15,7 @@ public class AutoCreate {
     // 需设置
     private String rootPath = System.getProperty("user.dir");
     private String outputPath = rootPath + "/" + Config.getStr("template.output.path");
-    private String templatePath = Config.getStr("template.path.jsp");
+    private String templatePath =rootPath+ Config.getStr("template.selected");
     private String packagePath = "com.kmob";
     private String module = "system";
     private Map<String, CRUD> crudMap;

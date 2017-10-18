@@ -108,6 +108,15 @@ public class TableFactory {
 		return null;
 	}
 
+	/**
+	 * 生成table类
+	 * 
+	 * 
+	 * @param conn
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
 	private Table createTable(Connection conn, ResultSet rs) throws SQLException {
 		String realTableName = null;
 		try {

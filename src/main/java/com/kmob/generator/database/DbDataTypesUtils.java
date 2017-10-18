@@ -104,7 +104,7 @@ public class DbDataTypesUtils {
 
 	static {
 		TYPE_MAP.put(Types.TINYINT, "Byte");
-		TYPE_MAP.put(Types.SMALLINT, "Dhort");
+		TYPE_MAP.put(Types.SMALLINT, "Integer");
 		TYPE_MAP.put(Types.INTEGER, "Integer");
 		TYPE_MAP.put(Types.BIGINT, "Long");
 		TYPE_MAP.put(Types.REAL, "Float");
