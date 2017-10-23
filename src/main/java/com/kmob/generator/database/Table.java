@@ -137,7 +137,8 @@ public class Table implements Serializable, Cloneable {
 		this.primaryKeyList = primaryKeyList;
 	}
 
-	public Object clone() {
+	@Override
+    public Object clone() {
 		try {
 			return super.clone();
 		} catch (CloneNotSupportedException e) {
@@ -172,6 +173,7 @@ public class Table implements Serializable, Cloneable {
 	
 	
 
+    @Override
     public String toString() {
 		return "[" + getRemarks() + ":" + getTableName() + " ]";
 	}

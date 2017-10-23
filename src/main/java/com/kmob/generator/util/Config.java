@@ -16,7 +16,7 @@ public class Config {
     private final static URL classPathUrl = Config.class.getResource("/");
     private final static String classPath = new File(classPathUrl.getFile()).getPath();
     private static String configPath = "/conf/";
-    private final static Map<String, String> configMap = new HashMap<String, String>();
+    public final static Map<String, String> configMap = new HashMap<String, String>();
 
     static {
         setConfigMap();

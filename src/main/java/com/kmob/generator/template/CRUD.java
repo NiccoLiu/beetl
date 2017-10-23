@@ -1,8 +1,11 @@
 package com.kmob.generator.template;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import org.apache.commons.lang3.time.DateFormatUtils;
 
 import com.kmob.generator.database.Table;
 import com.kmob.generator.template.model.FormType;
@@ -23,6 +26,10 @@ public class CRUD {
 	 * 名称
 	 */
 	private String name;
+	
+	private String timestamp;
+	
+	private Map<String,String> properties = new LinkedHashMap<String,String>();
 
 	private final Map<String, ModelAttr> map = new LinkedHashMap<String, ModelAttr>();
 	private final Map<String, ModelAttr> searchMap = new LinkedHashMap<String, ModelAttr>();
@@ -118,5 +125,21 @@ public class CRUD {
 	public void setTable(Table table) {
 		this.table = table;
 	}
+
+    public Map<String, String> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Map<String, String> properties) {
+        this.properties = properties;
+    }
+
+    public String getTimestamp() {
+        return DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
 }

@@ -50,8 +50,9 @@ public class GroupTemplateFactory {
     }
 
     public static void closeClasspath() {
-        if (groupTemplate != null)
+        if (groupTemplate != null) {
             groupTemplate.close();
+        }
     }
 
     public static GroupTemplate getString() throws IOException {
@@ -68,8 +69,9 @@ public class GroupTemplateFactory {
     }
 
     public static void closeString() {
-        if (stringTemplate != null)
+        if (stringTemplate != null) {
             stringTemplate.close();
+        }
     }
 
     public static String getFileName(CRUD crud, String name, String module) throws Exception {

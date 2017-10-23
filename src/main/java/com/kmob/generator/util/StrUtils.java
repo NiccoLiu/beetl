@@ -59,10 +59,12 @@ public class StrUtils {
      * @return
      */
     public static String toUpperCaseFirst(String str) {
-        if (str == null)
+        if (str == null) {
             return null;
-        if (str.length() == 0)
+        }
+        if (str.length() == 0) {
             return str;
+        }
         String pre = String.valueOf(str.charAt(0));
         return str.replaceFirst(pre, pre.toUpperCase());
     }
@@ -74,10 +76,12 @@ public class StrUtils {
      * @return
      */
     public static String toLowerCaseFirst(String str) {
-        if (str == null)
+        if (str == null) {
             return null;
-        if (str.length() == 0)
+        }
+        if (str.length() == 0) {
             return str;
+        }
         String pre = String.valueOf(str.charAt(0));
         return str.replaceFirst(pre, pre.toLowerCase());
     }
@@ -124,10 +128,12 @@ public class StrUtils {
      * @return
      */
     public static boolean equals(String str1, String str2) {
-        if (str1 == null && str2 == null)
+        if (str1 == null && str2 == null) {
             return true;
-        if (str1 != null && str1.equals(str2))
+        }
+        if (str1 != null && str1.equals(str2)) {
             return true;
+        }
         return false;
     }
 
@@ -140,18 +146,22 @@ public class StrUtils {
     }
 
     public static String apadLeft(String str, String str2, int len) {
-        if (str == null || str.length() == len || str2 == null)
+        if (str == null || str.length() == len || str2 == null) {
             return str;
-        if (str.length() > len)
+        }
+        if (str.length() > len) {
             return str.substring(str.length() - len, len);
+        }
         return apadpro(str, str2, len, true);
     }
 
     public static String apadRight(String str, String str2, int len) {
-        if (str == null || str.length() == len || str2 == null)
+        if (str == null || str.length() == len || str2 == null) {
             return str;
-        if (str.length() > len)
+        }
+        if (str.length() > len) {
             return str.substring(0, len);
+        }
         return apadpro(str, str2, len, false);
     }
 
@@ -185,10 +195,12 @@ public class StrUtils {
      * @return
      */
     public static String clear(String str, String str2) {
-        if (str == null)
+        if (str == null) {
             return str;
-        if (str2 == null)
+        }
+        if (str2 == null) {
             return str;
+        }
         String reg = "(" + str2 + ")+";
         Pattern p = Pattern.compile(reg);
         while (p.matcher(str).find()) {
@@ -206,10 +218,12 @@ public class StrUtils {
      * @return
      */
     public static String suojin(String str, int c, String sub) {
-        if (isEmpty(str))
+        if (isEmpty(str)) {
             return str;
-        if (str.length() <= c)
+        }
+        if (str.length() <= c) {
             return str;
+        }
         sub = nvl(sub);
         c = c - sub.length();
         c = c > str.length() ? 0 : c;
@@ -237,24 +251,28 @@ public class StrUtils {
     }
 
     public static String replace(String text, String searchString, String replacement, int max) {
-        if (isEmpty(text) || isEmpty(searchString) || replacement == null || max == 0)
+        if (isEmpty(text) || isEmpty(searchString) || replacement == null || max == 0) {
             return text;
+        }
         int start = 0;
         int end = text.indexOf(searchString, start);
-        if (end == -1)
+        if (end == -1) {
             return text;
+        }
         int replLength = searchString.length();
         int increase = replacement.length() - replLength;
         increase = increase >= 0 ? increase : 0;
         increase *= max >= 0 ? max <= 64 ? max : 64 : 16;
         StringBuffer buf = new StringBuffer(text.length() + increase);
         do {
-            if (end == -1)
+            if (end == -1) {
                 break;
+            }
             buf.append(text.substring(start, end)).append(replacement);
             start = end + replLength;
-            if (--max == 0)
+            if (--max == 0) {
                 break;
+            }
             end = text.indexOf(searchString, start);
         } while (true);
         buf.append(text.substring(start));

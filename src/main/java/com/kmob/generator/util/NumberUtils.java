@@ -115,7 +115,7 @@ public class NumberUtils {
      * @return
      */
     public static long parseLong(String str) {
-        return parseLong(str, 0l);
+        return parseLong(str, 0L);
     }
     /**
      * 遇到错误返回defaultValue

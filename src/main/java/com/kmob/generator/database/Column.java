@@ -90,8 +90,9 @@ public class Column implements java.io.Serializable, Cloneable {
 	 */
 	public Column(Table table, int sqlType, String sqlTypeName, String columnName, int size, int decimalDigits,
 			boolean isPk, boolean isNullable, boolean isIndexed, boolean isUnique, String defaultValue, String remarks) {
-		if (columnName == null)
-			throw new NullPointerException();
+		if (columnName == null) {
+            throw new NullPointerException();
+        }
 		this.table = table;
 		this.sqlType = sqlType;
 		this.columnName = columnName;
@@ -165,8 +166,9 @@ public class Column implements java.io.Serializable, Cloneable {
 	 * @return The SqlName value
 	 */
 	public String getColumnName() {
-		if (columnName == null)
-			throw new NullPointerException();
+		if (columnName == null) {
+            throw new NullPointerException();
+        }
 		return columnName;
 	}
 
@@ -257,9 +259,11 @@ public class Column implements java.io.Serializable, Cloneable {
 		return StrKit.makeAllWordFirstLetterUpperCase(StrKit.toUnderscoreName(getColumnName()));
 	}
 
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
+	@Override
+    public boolean equals(Object o) {
+		if (this == o) {
+            return true;
+        }
 		if (o instanceof Column) {
 			Column other = (Column) o;
 			if (getColumnName().equals(other.getColumnName())) {
@@ -269,7 +273,8 @@ public class Column implements java.io.Serializable, Cloneable {
 		return false;
 	}
 
-	public int hashCode() {
+	@Override
+    public int hashCode() {
 		if (getTable() != null) {
 			return (getTable().getTableName() + "#" + getColumnName()).hashCode();
 		} else {
@@ -277,11 +282,13 @@ public class Column implements java.io.Serializable, Cloneable {
 		}
 	}
 
-	public String toString() {
+	@Override
+    public String toString() {
 		return getRemarks() + ":" + getColumnName();
 	}
 
-	public Object clone() {
+	@Override
+    public Object clone() {
 		try {
 			return super.clone();
 		} catch (CloneNotSupportedException e) {

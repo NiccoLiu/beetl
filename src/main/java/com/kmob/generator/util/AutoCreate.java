@@ -9,6 +9,14 @@ import com.kmob.generator.beetl.GroupTemplateFactory;
 import com.kmob.generator.beetl.TemplateUtils;
 import com.kmob.generator.template.CRUD;
 
+/**
+ * 代码生成启动类
+ * 
+ *   
+ * @author zhouzhixiang  
+ * @date 2017年10月19日
+ * @since 1.0
+ */
 public class AutoCreate {
     
 

@@ -38,6 +38,11 @@ public class DateUtils {
      */
     private static final EPNDateFormat DEFAULT_FORMAT_YYYYMMDD = new EPNDateFormat(DEFAULT_REGEX_YYYYMMDD);
     private static Map<String, EPNDateFormat> formatMap = new HashMap<String, EPNDateFormat>();
+    
+    private static String REGEX = "\\b\\d{2}[.-]\\d{1,2}([.-]\\d{1,2}){0,1}\\b";
+    private static Pattern PARSE_PATTERN = Pattern.compile(REGEX);
+            
+    
     static {
         formatMap.put(DEFAULT_REGEX, DEFAULT_FORMAT);
         formatMap.put(DEFAULT_REGEX_YYYY_MM_DD_HH_MIN_SS, DEFAULT_FORMAT_YYYY_MM_DD_HH_MIN_SS);
@@ -92,44 +97,59 @@ public class DateUtils {
      */
     public static Date parseByAll(String time) {
         Date stamp = null;
-        if (time == null || "".equals(time))
+        if (time == null || "".equals(time)) {
             return null;
-        Pattern p3 = Pattern.compile("\\b\\d{2}[.-]\\d{1,2}([.-]\\d{1,2}){0,1}\\b");
-        if (p3.matcher(time).matches()) {
+        }
+        if (PARSE_PATTERN.matcher(time).matches()) {
             time = (time.charAt(0) == '1' || time.charAt(0) == '0' ? "20" : "19") + time;
         }
 
         stamp = DateUtils.parse(time, "yyyy-MM-ddHH:mm:ss");
-        if (stamp == null)
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy-MM-dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy.MM.dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy-MM");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy.MM");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy-MM-dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yy-MM-dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy.MM.dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy-MM.dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy.MM-dd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyyMMdd");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy年MM月dd日");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyyMM");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy年MM月");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy");
-        if (stamp == null)
+        }
+        if (stamp == null) {
             stamp = DateUtils.parse(time, "yyyy年");
+        }
         return stamp;
     }
 
@@ -209,8 +229,9 @@ class EPNDateFormat {
     }
 
     synchronized String format(java.util.Date date) {
-        if (date == null)
+        if (date == null) {
             return "";
+        }
         return instance.format(date);
     }
 

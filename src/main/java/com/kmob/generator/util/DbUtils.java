@@ -71,6 +71,7 @@ public class DbUtils {
 				System.err.println("####" + table.getTableName() + "没有备注！！！");
 			}
 			CRUD model = new CRUD();
+			model.setProperties(Config.configMap);
 			// 把Table设置进去，java文件生成需要
 			model.setTable(table);
 

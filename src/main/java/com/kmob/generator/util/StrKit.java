@@ -47,20 +47,26 @@ public class StrKit {
 	}
 	
 	public static boolean notBlank(String... strings) {
-		if (strings == null)
-			return false;
-		for (String str : strings)
-			if (str == null || "".equals(str.trim()))
-				return false;
+		if (strings == null) {
+            return false;
+        }
+		for (String str : strings) {
+            if (str == null || "".equals(str.trim())) {
+                return false;
+            }
+        }
 		return true;
 	}
 	
 	public static boolean notNull(Object... paras) {
-		if (paras == null)
-			return false;
-		for (Object obj : paras)
-			if (obj == null)
-				return false;
+		if (paras == null) {
+            return false;
+        }
+		for (Object obj : paras) {
+            if (obj == null) {
+                return false;
+            }
+        }
 		return true;
 	}
 	
@@ -71,7 +77,9 @@ public class StrKit {
      * @return the converted name
      */
     public static String toUnderscoreName(String name) {
-        if(name == null) return null;
+        if(name == null) {
+            return null;
+        }
 
         String filteredName = name;
         if(filteredName.indexOf("_") >= 0 && filteredName.equals(filteredName.toUpperCase())) {
@@ -127,8 +135,12 @@ public class StrKit {
     
     
     public static boolean contains(String str,String... keywords) {
-        if(str == null) return false;
-        if(keywords == null) throw new IllegalArgumentException("'keywords' must be not null");
+        if(str == null) {
+            return false;
+        }
+        if(keywords == null) {
+            throw new IllegalArgumentException("'keywords' must be not null");
+        }
 
         for(String keyword : keywords) {
             if(str.contains(keyword.toLowerCase())) {
@@ -140,7 +152,9 @@ public class StrKit {
     
 
     public static String getJavaClassSimpleName(String clazz) {
-        if(clazz == null) return null;
+        if(clazz == null) {
+            return null;
+        }
         if(clazz.lastIndexOf(".") >= 0) {
             return clazz.substring(clazz.lastIndexOf(".")+1);
         }

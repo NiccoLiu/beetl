@@ -31,8 +31,9 @@ public class TableFactory {
 	}
 
 	public synchronized static TableFactory getInstance() {
-		if (instance == null)
-			instance = new TableFactory();
+		if (instance == null) {
+            instance = new TableFactory();
+        }
 		return instance;
 	}
 
@@ -74,8 +75,9 @@ public class TableFactory {
 	}
 
 	private Table getTable(String catalog, String schema, String tableName) {
-		if (tableName == null || tableName.trim().length() == 0)
-			throw new IllegalArgumentException("tableName must be not empty");
+		if (tableName == null || tableName.trim().length() == 0) {
+            throw new IllegalArgumentException("tableName must be not empty");
+        }
 
 		Table t = null;
 		try {

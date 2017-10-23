@@ -103,8 +103,9 @@ public class FileUtils {
         } else {
             File[] filelist = baseDir.listFiles(fileFilter);
             for (File file : filelist) {
-                if (file.isFile())
+                if (file.isFile()) {
                     files.add(file.getName());
+                }
             }
         }
         return files;
@@ -126,8 +127,9 @@ public class FileUtils {
         for (File f : files) {
             if(f.isDirectory()){
                 recursionFileNames(f,resultFileNames);
-            }else
+            } else {
                 resultFileNames.add(f.getPath());
+            }
         }
         return resultFileNames;
     }
