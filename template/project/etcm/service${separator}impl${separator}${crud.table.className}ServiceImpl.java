@@ -47,7 +47,7 @@ public class @{crud.table.className}ServiceImpl implements @{crud.table.classNam
     @Override
     public @{crud.table.className} query(@{crud.table.className} param){
         LOGGER.debug("query @{crud.table.className} by {}",param);
-        @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)} = @{strutils.toLowerCaseFirst(crud.table.className)}Mapper.selectOne(@{strutils.toLowerCaseFirst(crud.table.className)});
+        @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)} = @{strutils.toLowerCaseFirst(crud.table.className)}Mapper.selectOne(param);
         return @{strutils.toLowerCaseFirst(crud.table.className)};
     }
     
