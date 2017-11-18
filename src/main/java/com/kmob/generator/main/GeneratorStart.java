@@ -10,34 +10,31 @@ import com.kmob.generator.util.DbUtils;
 import com.kmob.generator.util.StrUtils;
 
 /**
+ * 启动类
  * 
- * 
- *   
- * @author zhouzhixiang  
- * @date 2017年6月26日
- * @since 1.0
+ * @author verne
  */
 public class GeneratorStart {
 
-	public static void main(String[] args) throws Exception {
-		run();
-	}
+    public static void main(String[] args) throws Exception {
+        run();
+    }
 
-	protected static void run() throws SQLException, Exception {
-		DbUtils.init();
+    protected static void run() throws SQLException, Exception {
+        DbUtils.init();
 
-		String selected = Config.getStr("template.selected");
-		String tables = Config.getStr("template.tables");
-		
-		Map<String, CRUD> crudMap = null;
-		if (StrUtils.isEmpty(tables) || "all".equalsIgnoreCase(tables)) {
-			crudMap = DbUtils.getCRUDMap();
-		} else {
-			String[] tableArray = tables.split(",");
-			crudMap = DbUtils.getCRUDMap(tableArray);
-		}
+        String selected = Config.getStr("template.selected");
+        String tables = Config.getStr("template.tables");
 
-		new AutoCreate().setTemplatePath(selected).setCrudMap(crudMap).create();
-	}
+        Map<String, CRUD> crudMap = null;
+        if (StrUtils.isEmpty(tables) || "all".equalsIgnoreCase(tables)) {
+            crudMap = DbUtils.getCRUDMap();
+        } else {
+            String[] tableArray = tables.split(",");
+            crudMap = DbUtils.getCRUDMap(tableArray);
+        }
+
+        new AutoCreate().setTemplatePath(selected).setCrudMap(crudMap).create();
+    }
 
 }

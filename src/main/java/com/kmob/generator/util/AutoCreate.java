@@ -14,7 +14,7 @@ import com.kmob.generator.template.CRUD;
  * 
  *   
  * @author zhouzhixiang  
- * @date 2017年10月19日
+ *  2017年10月19日
  * @since 1.0
  */
 public class AutoCreate {

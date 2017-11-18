@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * 
  *   
  * @author zhouzhixiang  
- * @date 2017年6月26日
+ *  2017年6月26日
  * @since 1.0
  */
 public class StrUtils {

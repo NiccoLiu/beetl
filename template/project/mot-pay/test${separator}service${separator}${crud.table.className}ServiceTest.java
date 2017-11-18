@@ -5,11 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSONObject;
 import @{crud.properties.base_package}.@{crud.properties.model}.test.BaseJunit;
-import com.kmob.etcm.common.entity.ResultInfo;
+import com.kmob.mot.pay.common.vo.ResultInfo;
 import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.table.className}Service;
 
 /**
  * @{crud.table.remarks}:业务逻辑处理测试类
+ * 
  * @author generator
  */
 public class @{crud.table.className}ServiceTest extends BaseJunit  {

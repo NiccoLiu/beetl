@@ -1,4 +1,4 @@
-package @{crud.properties.base_package}.@{crud.properties.model}.mapper;
+package @{crud.properties.base_package}.@{crud.properties.model}.dao;
 
 import java.util.List;
 
@@ -11,16 +11,19 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import @{crud.properties.base_package}.@{crud.properties.model}.entity.@{crud.table.className};
 
 /**
+ * @{crud.table.remarks}DAO类
  * 
- * @{crud.table.remarks}:数据层
  * @author generator
  */
-public interface @{crud.table.className}Mapper extends BaseMapper<@{crud.table.className}> {
+public interface @{crud.table.className}DAO extends BaseMapper<@{crud.table.className}> {
     
     /**
      * 分页查询@{crud.table.remarks}
-     * 
-     * @date @{crud.timestamp}
+     * @param page
+     * @param alipayOrder
+     * @param orderByField
+     * @param isAsc
+     * @return @{crud.table.remarks}列表
      */
     List<@{crud.table.className}> get@{crud.table.className}Page(@Param("page") Page<@{crud.table.className}> page,
         @Param("@{strutils.toLowerCaseFirst(crud.table.className)}") @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)},

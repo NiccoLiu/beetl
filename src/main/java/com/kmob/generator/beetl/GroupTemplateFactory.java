@@ -17,14 +17,12 @@ import com.kmob.generator.util.StrUtils;
 /**
  * beetl 字符串模板
  * 
- *   
- * @author zhouzhixiang  
- * @date 2017年6月26日
- * @since 1.0
+ * @author verne
  */
 public class GroupTemplateFactory {
     private static GroupTemplate stringTemplate = null;
-    private static Map<String,GroupTemplate> GROUPTEMPLATE_MAP = new ConcurrentHashMap<String,GroupTemplate>();
+    private static Map<String, GroupTemplate> GROUPTEMPLATE_MAP =
+            new ConcurrentHashMap<String, GroupTemplate>();
     private static GroupTemplate groupTemplate;
 
     public static GroupTemplate getClasspath(String root) {
@@ -78,8 +76,8 @@ public class GroupTemplateFactory {
         GroupTemplate stringTemplate = getString();
         Template t = stringTemplate.getTemplate(name);
         t.binding("crud", crud);
-        t.binding("tableUpper",StrUtils.toUpperCaseFirst(crud.getTable().getClassName()));
-        t.binding("tableLower",StrUtils.toLowerCaseFirst(crud.getTable().getClassName()));
+        t.binding("tableUpper", StrUtils.toUpperCaseFirst(crud.getTable().getClassName()));
+        t.binding("tableLower", StrUtils.toLowerCaseFirst(crud.getTable().getClassName()));
         t.binding("key", crud.getUrlKey());
         t.binding("keyUpper", crud.getUrlKey().toUpperCase());
         t.binding("keyLower", crud.getUrlKey().toLowerCase());

@@ -33,7 +33,6 @@ import com.kmob.powernetwork.operation.util.ToolUtil;
 /**
  * @{crud.table.remarks} 控制层
  * @author zhouzhixiang
- * @date @{now}
  */
 @Controller
 @RequestMapping(value = "/@{module}/@{strutils.toLowerCaseFirst(crud.table.className)}")
