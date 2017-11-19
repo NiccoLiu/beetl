@@ -19,11 +19,12 @@ public interface @{crud.table.className}DAO extends BaseMapper<@{crud.table.clas
     
     /**
      * 分页查询@{crud.table.remarks}
-     * @param page
-     * @param alipayOrder
-     * @param orderByField
-     * @param isAsc
-     * @return @{crud.table.remarks}列表
+     * 
+     * @param page page info
+     * @param @{strutils.toLowerCaseFirst(crud.table.className)} search criteria
+     * @param orderByField order's field
+     * @param isAsc true is asc ,or not
+     * @return @{crud.table.remarks} list
      */
     List<@{crud.table.className}> get@{crud.table.className}Page(@Param("page") Page<@{crud.table.className}> page,
         @Param("@{strutils.toLowerCaseFirst(crud.table.className)}") @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)},

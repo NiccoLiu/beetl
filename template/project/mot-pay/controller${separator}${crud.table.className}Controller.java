@@ -16,7 +16,7 @@ import com.kmob.mot.pay.common.util.PageFactory;
 import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.table.className}Service;
 
 /**
- * @{crud.table.remarks}: 后端controller类
+ * @{crud.table.remarks}: Controller类
  * 
  * @author generator
  */
@@ -33,8 +33,8 @@ public class @{crud.table.className}Controller {
      * 新增@{crud.table.remarks}
      * 
      * 
-     * @param params @{crud.table.remarks}属性实体
-     * @return code & msg
+     * @param params jsonstring
+     * @return code and msg
      */
     @PostMapping("add")
     @ResponseBody
@@ -47,17 +47,15 @@ public class @{crud.table.className}Controller {
      * 查询@{crud.table.remarks}
      * 
      * 
-     * @param params
-     * @return code & entity json string
+     * @param params jsonstring
+     * @return code and entity json string
      */
     @PostMapping("query")
     @ResponseBody
     public ResultInfo query(@RequestBody JSONObject params){
         ResultInfo resultInfo = new ResultInfo(0, "success");
         @{crud.table.className} paramEntity = params.toJavaObject(@{crud.table.className}.class);
-        
         @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)} = @{strutils.toLowerCaseFirst(crud.table.className)}ServiceImpl.query(paramEntity);
-        
         resultInfo.setData(@{strutils.toLowerCaseFirst(crud.table.className)});
         return resultInfo;
     }
@@ -67,8 +65,8 @@ public class @{crud.table.className}Controller {
      * 分页查询@{crud.table.remarks}
      * 
      * 
-     * @param params
-     * @return code & dataList 
+     * @param params pageInfo and search criteria
+     * @return code and dataList 
      */
     @PostMapping("queryPage")
     @ResponseBody
@@ -85,8 +83,8 @@ public class @{crud.table.className}Controller {
      * 更新@{crud.table.remarks}
      * 
      * 
-     * @param params
-     * @return code & msg
+     * @param params jsonstring
+     * @return code and msg 
      */
     @PostMapping("update")
     @ResponseBody
@@ -101,8 +99,8 @@ public class @{crud.table.className}Controller {
      * 删除@{crud.table.remarks}
      * 
      * 
-     * @param params
-     * @return code & msg
+     * @param params jsonstring
+     * @return code and msg
      */
     @PostMapping("delete")
     @ResponseBody

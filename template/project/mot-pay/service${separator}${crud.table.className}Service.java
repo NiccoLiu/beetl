@@ -16,8 +16,9 @@ public interface @{crud.table.className}Service {
     /**
      * 新增@{crud.table.remarks}
      * 
-     * @param params
-     * @return code & msg
+     * 
+     * @param params jsonstring from entity
+     * @return code and msg
      */
     ResultInfo add(JSONObject params);
     
@@ -25,8 +26,9 @@ public interface @{crud.table.className}Service {
     /**
      * 查询@{crud.table.remarks}
      * 
-     * @param params
-     * @return @{crud.table.remarks}
+     * 
+     * @param @{strutils.toLowerCaseFirst(crud.table.className)} jsonstring to entity
+     * @return code and entity json string
      */
     @{crud.table.className} query(@{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)});
 
@@ -34,8 +36,10 @@ public interface @{crud.table.className}Service {
     /**
      * 分页查询@{crud.table.remarks}
      * 
-     * @param params
-     * @return code & @{crud.table.remarks}List
+     * 
+     * @param page pageInfo
+     * @param @{strutils.toLowerCaseFirst(crud.table.className)} search criteria jsonstring to entity
+     * @return code and dataList 
      */
     ResultInfo queryPage(Page<@{crud.table.className}> page, @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)});
 
@@ -43,8 +47,8 @@ public interface @{crud.table.className}Service {
     /**
      * 更新@{crud.table.remarks}
      * 
-     * @param alipayOrder 更新对象
-     * @return code & msg
+     * @param @{strutils.toLowerCaseFirst(crud.table.className)} jsonstring to entity
+     * @return code and msg
      */
     ResultInfo update(@{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)});
 
@@ -52,8 +56,8 @@ public interface @{crud.table.className}Service {
     /**
      * 删除@{crud.table.remarks}
      * 
-     * @param params 
-     * @return 是否成功
+     * @param params jsonstring from delete criteria
+     * @return code and msg
      */
     ResultInfo delete(JSONObject params);
 }

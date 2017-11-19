@@ -15,6 +15,8 @@ import com.kmob.generator.util.StrKit;
 public class Table implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 1L;
+    
+    private static final String TABLE_END = "表";
 
     /**
      * 数据库中表的表名称,其它属性很多都是根据此属性派生
@@ -49,6 +51,11 @@ public class Table implements Serializable, Cloneable {
     public Table(Table t) {
         setTableName(t.getTableName());
         this.remarks = t.getRemarks();
+        
+        if(this.remarks !=null && this.remarks.endsWith(TABLE_END)) {
+            remarks = remarks.substring(0,remarks.length() - 1);
+        }
+        
         this.columns = t.getColumns();
         this.noNullcolumns = t.getNotNullColumns();
         this.searchcolumns = t.getSearchColumns();
