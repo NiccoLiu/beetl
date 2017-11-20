@@ -25,7 +25,6 @@
    - 生成代码路径：template.output.path=
 
 5. 执行生成代码
-
 执行类
 ``` java
 com.kmob.generator.main.GeneratorStart
