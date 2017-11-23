@@ -62,13 +62,13 @@ public class DbDataTypesUtils {
     public static String getPreferredJavaTypeObject(int sqlType, int size, int decimalDigits) {
         if ((sqlType == Types.DECIMAL || sqlType == Types.NUMERIC) && decimalDigits == 0) {
             if (size == 1) {
-                return "int";
+                return "Integer";
             } else if (size < 3) {
                 return "java.lang.Byte";
             } else if (size < 5) {
                 return "java.lang.Short";
             } else if (size < 10) {
-                return "int";
+                return "Integer";
             } else if (size < 19) {
                 return "java.lang.Long";
             } else {
@@ -100,16 +100,16 @@ public class DbDataTypesUtils {
     }
 
     static {
-        TYPE_MAP.put(Types.TINYINT, "int");
-        TYPE_MAP.put(Types.SMALLINT, "int");
-        TYPE_MAP.put(Types.INTEGER, "int");
+        TYPE_MAP.put(Types.TINYINT, "Integer");
+        TYPE_MAP.put(Types.SMALLINT, "Integer");
+        TYPE_MAP.put(Types.INTEGER, "Integer");
         TYPE_MAP.put(Types.BIGINT, "Long");
         TYPE_MAP.put(Types.REAL, "float");
         TYPE_MAP.put(Types.FLOAT, "double");
         TYPE_MAP.put(Types.DOUBLE, "double");
         TYPE_MAP.put(Types.DECIMAL, "java.math.BigDecimal");
         TYPE_MAP.put(Types.NUMERIC, "java.math.BigDecimal");
-        TYPE_MAP.put(Types.BIT, "int");
+        TYPE_MAP.put(Types.BIT, "Integer");
         TYPE_MAP.put(Types.BOOLEAN, "boolean");
         TYPE_MAP.put(Types.CHAR, "String");
         TYPE_MAP.put(Types.VARCHAR, "String");

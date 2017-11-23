@@ -16,12 +16,12 @@ public class JavaTypeMapping {
     static {
         wraper2primitive.put("Byte", "byte");
         wraper2primitive.put("Short", "short");
-        wraper2primitive.put("Integer", "int");
+        wraper2primitive.put("Integer", "Integer");
         wraper2primitive.put("Long", "long");
         wraper2primitive.put("Float", "float");
         wraper2primitive.put("Double", "double");
         wraper2primitive.put("Boolean", "boolean");
-        wraper2primitive.put("Integer", "int");
+        wraper2primitive.put("Integer", "Integer");
         wraper2primitive.put("Character", "char");
 
         for (String key : wraper2primitive.keySet()) {
