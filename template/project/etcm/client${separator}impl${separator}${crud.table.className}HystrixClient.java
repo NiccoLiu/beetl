@@ -8,8 +8,8 @@ import com.kmob.etcm.apigateway.service.@{crud.table.className}Client;
 import com.kmob.etcm.common.entity.ResultInfo;
 
 /**
- * 
  * @{crud.table.remarks} HystrixClient 
+ * 
  * @author generator
  */
 @Component

@@ -19,8 +19,8 @@ import @{crud.properties.base_package}.@{crud.properties.model}.mapper.@{crud.ta
 import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.table.className}Service;
 
 /**
- * 
  * @{crud.table.remarks}:业务接口实现类
+ * 
  * @author generator
  */
 @Service
