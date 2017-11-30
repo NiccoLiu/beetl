@@ -2,16 +2,17 @@
 - [x] beetl-2.0
 - [x] jfinal-2.1
 
-
 ---
+
+
 
 # 简介
 
 1. beetl是模版引擎
 详细请参考[beetl官网](http://ibeetl.com/)
-2. jfinal主要用到里面的DB插件，没有用到jfinal的所有东西
+2. jfinal仅仅用到其中的DB插件
 详细请参考[jfinal官网](http://www.jfinal.com/)
-3. 代码模版配置，项目中template有三个目录
+3. 代码模版配置
    - template/project/mot-pay 移动支付平台模版
    - template/project/etcm ETCM项目模版
    - template/project/operation 自动化项目模版
