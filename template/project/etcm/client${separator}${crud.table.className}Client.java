@@ -11,6 +11,7 @@ import com.kmob.etcm.common.entity.ResultInfo;
 
 /**
  * @{crud.table.remarks} springcloud client 
+ * 
  * @author generator
  */
 @FeignClient(value = "@{crud.properties.microservice_name}", fallback = @{crud.table.className}HystrixClient.class)

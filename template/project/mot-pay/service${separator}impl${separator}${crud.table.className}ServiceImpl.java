@@ -19,9 +19,9 @@ import @{crud.properties.base_package}.@{crud.properties.model}.dao.@{crud.table
 import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.table.className}Service;
 
 /**
- * 
- * 
  * @{crud.table.remarks}:业务接口实现类
+ * 
+ * 
  * @author generator
  */
 @Service

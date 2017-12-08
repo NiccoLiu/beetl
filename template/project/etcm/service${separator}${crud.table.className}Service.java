@@ -7,8 +7,8 @@ import com.kmob.etcm.common.entity.ResultInfo;
 import @{crud.properties.base_package}.@{crud.properties.model}.entity.@{crud.table.className};
 
 /**
- * 
  * @{crud.table.remarks}:业务接口类
+ * 
  * @author generator
  */
 public interface @{crud.table.className}Service {

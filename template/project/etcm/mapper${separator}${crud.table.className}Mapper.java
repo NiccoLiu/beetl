@@ -11,8 +11,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import @{crud.properties.base_package}.@{crud.properties.model}.entity.@{crud.table.className};
 
 /**
- * 
  * @{crud.table.remarks}:数据层
+ * 
  * @author generator
  */
 public interface @{crud.table.className}Mapper extends BaseMapper<@{crud.table.className}> {

@@ -10,6 +10,7 @@ import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.t
 
 /**
  * @{crud.table.remarks}:业务逻辑处理测试类
+ * 
  * @author generator
  */
 public class @{crud.table.className}ServiceTest extends BaseJunit  {

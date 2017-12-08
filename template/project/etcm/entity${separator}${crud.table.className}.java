@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.enums.IdType;
 
 /**
  * @{crud.table.remarks} 实体类
+ * 
  * @author generator
  */
 @TableName(value = "@{crud.table.tableName}")

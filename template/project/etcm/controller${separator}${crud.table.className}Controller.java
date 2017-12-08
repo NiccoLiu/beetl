@@ -16,9 +16,9 @@ import com.kmob.etcm.common.util.PageFactory;
 import @{crud.properties.base_package}.@{crud.properties.model}.service.@{crud.table.className}Service;
 
 /**
- * 
- * 
  * @{crud.table.remarks}: 后端controller类
+ * 
+ * 
  * @author generator
  */
 @RestController
