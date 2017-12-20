@@ -109,7 +109,8 @@ public class DbUtils {
 	 * @param colName
 	 * @param remark
 	 */
-	public static ModelAttr attr(Column column) {
+	@SuppressWarnings("unlikely-arg-type")
+    public static ModelAttr attr(Column column) {
 		String colName = column.getColumnName();
 		String remark = column.getRemarks();
 		boolean isNull = column.isNullable();

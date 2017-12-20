@@ -1,16 +1,15 @@
 package com.kmob.generator.util;
+
 import java.util.regex.Pattern;
 
 /**
  * 字符串处理
  * 
- *   
- * @author zhouzhixiang  
- *  2017年6月26日
+ * @author verne
  * @since 1.0
  */
 public class StrUtils {
-    
+
     /**
      * 为空
      * 
@@ -30,7 +29,7 @@ public class StrUtils {
     public static boolean isNotEmpty(String str) {
         return !isEmpty(str);
     }
-    
+
     /**
      * 转大写
      * 
@@ -40,7 +39,7 @@ public class StrUtils {
     public static String toUpperCase(String instr) {
         return instr == null ? instr : instr.toUpperCase();
     }
-    
+
     /**
      * 转小写
      * 
@@ -50,7 +49,7 @@ public class StrUtils {
     public static String toLowerCase(String instr) {
         return instr == null ? instr : instr.toLowerCase();
     }
-    
+
 
     /**
      * 首字母大写 ,其余不变
@@ -68,7 +67,7 @@ public class StrUtils {
         String pre = String.valueOf(str.charAt(0));
         return str.replaceFirst(pre, pre.toUpperCase());
     }
-    
+
     /**
      * 首字母小写 ,其余不变
      * 
@@ -85,7 +84,7 @@ public class StrUtils {
         String pre = String.valueOf(str.charAt(0));
         return str.replaceFirst(pre, pre.toLowerCase());
     }
-    
+
     /**
      * 不会抛NullPointerException 的trim() <br>
      * 传入null会返回null
@@ -96,7 +95,7 @@ public class StrUtils {
     public static String trim(String str) {
         return str == null ? null : str.trim();
     }
-    
+
     /**
      * 过滤 ;当instr==null时返回长度为0的""; <br>
      * 与 nvl(...)系的区别在于只处理null ,不处理长度为0的"";
@@ -119,7 +118,7 @@ public class StrUtils {
     public static String nvl(String instr, String defaultValue) {
         return instr == null || "".equals(instr) ? defaultValue : instr;
     }
-    
+
     /**
      * 比较 str1 和 str2 如果都是 null 或者 str1.equals(str2) 返回 true 表示一样 ;
      * 
@@ -188,10 +187,8 @@ public class StrUtils {
     /**
      * 清除str中出现的所有str2字符序列 直到结果中再也找不出str2为止 str2 == null时 返回str
      * 
-     * @param str
-     *            原始字符串
-     * @param str2
-     *            清除的目标
+     * @param str 原始字符串
+     * @param str2 清除的目标
      * @return
      */
     public static String clear(String str, String str2) {

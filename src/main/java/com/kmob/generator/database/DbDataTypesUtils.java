@@ -4,7 +4,7 @@ import java.sql.Types;
 import java.util.HashMap;
 
 /**
- * 
+ * 数据库类型工具类
  * 
  * @author verne
  */

@@ -2,7 +2,11 @@ package com.kmob.generator.template.model;
 
 import com.kmob.generator.util.StrKit;
 
-
+/**
+ * model属性
+ *
+ * @author verne
+ */
 public class ModelAttr {
 
     /**
@@ -45,10 +49,7 @@ public class ModelAttr {
     /**
      * 数据展示
      * <p>
-     * 学以致用，不嫌麻烦~！~
-     * 8位，前四位保留;后三位，
-     * 查询,展示列表，添加列表，编辑列表，查看列表
-     * 1表示展示，0表示隐藏
+     * 学以致用，不嫌麻烦~！~ 8位，前四位保留;后三位， 查询,展示列表，添加列表，编辑列表，查看列表 1表示展示，0表示隐藏
      */
     private byte operate;
 
@@ -132,7 +133,8 @@ public class ModelAttr {
 
     public ModelAttr setKey(String key) {
         this.key = key;
-        this.javaKey = StrKit.firstCharToLowerCase(StrKit.makeAllWordFirstLetterUpperCase(StrKit.toUnderscoreName(key)));
+        this.javaKey = StrKit.firstCharToLowerCase(
+                StrKit.makeAllWordFirstLetterUpperCase(StrKit.toUnderscoreName(key)));
         return this;
     }
 

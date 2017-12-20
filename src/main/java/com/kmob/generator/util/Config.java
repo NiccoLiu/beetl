@@ -12,6 +12,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
+/**
+ * 配置类
+ *
+ * @author verne
+ */
 public class Config {
     private final static URL classPathUrl = Config.class.getResource("/");
     private final static String classPath = new File(classPathUrl.getFile()).getPath();
@@ -44,7 +49,7 @@ public class Config {
         String val = getStr(key);
         return NumberUtils.parseLong(val);
     }
-    
+
     public static double getToDbl(String key) {
         String val = getStr(key);
         return NumberUtils.parseDbl(val);
@@ -58,7 +63,7 @@ public class Config {
             return false;
         }
     }
-    
+
     /**
      * 加载配置文件
      * 
@@ -106,8 +111,7 @@ public class Config {
     /**
      * 查找当前文件下所有properties文件
      * 
-     * @param baseDirName
-     *            查找的文件夹路径
+     * @param baseDirName 查找的文件夹路径
      */
     private static List<String> findFiles(String baseDirName) {
         List<String> configFiles = new ArrayList<String>();

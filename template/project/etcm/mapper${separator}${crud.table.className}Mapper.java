@@ -19,8 +19,6 @@ public interface @{crud.table.className}Mapper extends BaseMapper<@{crud.table.c
     
     /**
      * 分页查询@{crud.table.remarks}
-     * 
-     * @date @{crud.timestamp}
      */
     List<@{crud.table.className}> get@{crud.table.className}Page(@Param("page") Page<@{crud.table.className}> page,
         @Param("@{strutils.toLowerCaseFirst(crud.table.className)}") @{crud.table.className} @{strutils.toLowerCaseFirst(crud.table.className)},

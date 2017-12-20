@@ -135,22 +135,4 @@ public class TemplateUtils {
         return str;
     }
 
-    /**
-     * 测试
-     * 
-     */
-    public static void main(String[] args) {
-        String select = getJson("1", "男", "3", "未知", "2", "女");
-        System.out.println(select);
-        System.out.println(value(select, "2"));
-
-        String radio = getJson("2", "女", "3", "未知", "1", "男");
-        System.out.println(radio);
-        System.out.println(value(radio, "1"));
-
-        String checkbox = getJson("3", "未知", "1", "男", "2", "女");
-        System.out.println(checkbox);
-        System.out.println(value(checkbox, "3"));
-    }
-
 }

@@ -9,6 +9,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 文件工具类
+ *
+ * @author verne
+ */
 public class FileUtils {
 
     /**
@@ -70,8 +75,7 @@ public class FileUtils {
     /**
      * 查找当前文件下所有properties文件
      * 
-     * @param baseDirName
-     *            查找的文件夹路径
+     * @param baseDirName 查找的文件夹路径
      */
     public static List<String> findFiles(String baseDirName) {
         List<String> files = new ArrayList<String>();
@@ -91,8 +95,7 @@ public class FileUtils {
     /**
      * 查找当前文件下所有properties文件
      * 
-     * @param baseDirName
-     *            查找的文件夹路径
+     * @param baseDirName 查找的文件夹路径
      */
     public static List<String> findFileNames(String baseDirName, FileFilter fileFilter) {
         List<String> files = new ArrayList<String>();
@@ -110,7 +113,7 @@ public class FileUtils {
         }
         return files;
     }
-    
+
     /**
      * 递归查询目录下所有文件
      * 
@@ -119,14 +122,14 @@ public class FileUtils {
      * @param resultFileName
      * @return
      */
-    public static List<String> recursionFileNames(File file,List<String> resultFileNames){
+    public static List<String> recursionFileNames(File file, List<String> resultFileNames) {
         File[] files = file.listFiles();
-        if(files==null){
+        if (files == null) {
             return resultFileNames;
         }
         for (File f : files) {
-            if(f.isDirectory()){
-                recursionFileNames(f,resultFileNames);
+            if (f.isDirectory()) {
+                recursionFileNames(f, resultFileNames);
             } else {
                 resultFileNames.add(f.getPath());
             }

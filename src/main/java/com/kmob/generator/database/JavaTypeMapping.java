@@ -6,7 +6,7 @@ import java.util.Map;
 import com.kmob.generator.util.StrKit;
 
 /**
- * 
+ * 数据库字段和类属性映射
  * 
  * @author verne
  */

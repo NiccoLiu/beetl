@@ -12,18 +12,16 @@ import com.kmob.generator.template.CRUD;
 /**
  * 代码生成启动类
  * 
- *   
- * @author zhouzhixiang  
- *  2017年10月19日
+ * @author verne
  * @since 1.0
  */
 public class AutoCreate {
-    
+
 
     // 需设置
     private String rootPath = System.getProperty("user.dir");
     private String outputPath = rootPath + "/" + Config.getStr("template.output.path");
-    private String templatePath =rootPath+ Config.getStr("template.selected");
+    private String templatePath = rootPath + Config.getStr("template.selected");
     private String packagePath = "com.kmob";
     private String module = "system";
     private Map<String, CRUD> crudMap;
@@ -50,20 +48,21 @@ public class AutoCreate {
                 System.out.print("\t" + crud.getUrlKey() + ".....");
 
 
-                path = rebuild(outputPath); //  "/" + crud.getUrlKey()
+                path = rebuild(outputPath); // "/" + crud.getUrlKey()
                 if (!new File(path).exists()) {
                     new File(path).mkdirs();
                 }
-                
+
                 List<String> pageList = new ArrayList<String>();
                 FileUtils.recursionFileNames(new File(rootPath + templatePath), pageList);
                 for (String name : pageList) {
-                    String realName = name.substring(rootPath.length()+templatePath.length());
-                    String root = name.substring(0,name.lastIndexOf("\\"));
+                    String realName = name.substring(rootPath.length() + templatePath.length());
+                    String root = name.substring(0, name.lastIndexOf("\\"));
                     String templateFile = name.substring(name.lastIndexOf("\\"));
-//                    name = (templatePath + realName).replaceAll("\\\\", "/");
-                    html = TemplateUtils.getStr(root,templateFile, "crud", crud //
-                            , "now", DateUtils.getNow(), "packagePath", this.packagePath, "module", this.module);
+                    // name = (templatePath + realName).replaceAll("\\\\", "/");
+                    html = TemplateUtils.getStr(root, templateFile, "crud", crud //
+                            , "now", DateUtils.getNow(), "packagePath", this.packagePath, "module",
+                            this.module);
 
                     // 文件名处理
                     String fileName = GroupTemplateFactory.getFileName(crud, realName, this.module);
@@ -71,7 +70,7 @@ public class AutoCreate {
                     if (!new File(filePath).getParentFile().exists()) {
                         new File(filePath).getParentFile().mkdirs();
                     }
-                    //  写文件
+                    // 写文件
                     FileUtils.write(filePath, html.getBytes("UTF-8"));
                 }
             }
@@ -83,14 +82,14 @@ public class AutoCreate {
 
     public void init() {
         // 模板配置和函数加载，区分别的模板~生成没冲突
-//        groupTemplate.registerFunctionPackage("flyfox", TemplateUtils.class);
-//        groupTemplate.registerFunctionPackage("strutils", StrUtils.class);
-//        Configuration cfg = groupTemplate.getConf();
-//
-//        cfg.setStatementStart(Config.getStr("beetl.statementStart"));
-//        cfg.setStatementEnd(Config.getStr("beetl.statementEnd"));
-//        cfg.setPlaceholderStart(Config.getStr("beetl.placeholderStart"));
-//        cfg.setPlaceholderEnd(Config.getStr("beetl.placeholderEnd"));
+        // groupTemplate.registerFunctionPackage("flyfox", TemplateUtils.class);
+        // groupTemplate.registerFunctionPackage("strutils", StrUtils.class);
+        // Configuration cfg = groupTemplate.getConf();
+        //
+        // cfg.setStatementStart(Config.getStr("beetl.statementStart"));
+        // cfg.setStatementEnd(Config.getStr("beetl.statementEnd"));
+        // cfg.setPlaceholderStart(Config.getStr("beetl.placeholderStart"));
+        // cfg.setPlaceholderEnd(Config.getStr("beetl.placeholderEnd"));
     }
 
 
