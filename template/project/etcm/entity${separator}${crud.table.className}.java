@@ -32,7 +32,7 @@ public class @{crud.table.className} extends Model<@{crud.table.className}> {
 	@TableField(value = "@{strutils.toLowerCase(column.columnName)}")
 			# } #
 		# } #
-	private @{column.javaType} @{strutils.toLowerCaseFirst(column.columnJavaName)}; 
+	private @{column.javaType} @{strutils.toLowerCaseFirst(column.columnJavaName)};
     # } #
 	// columns END
 
